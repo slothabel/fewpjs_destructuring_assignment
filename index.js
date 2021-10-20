@@ -1,6 +1,14 @@
 const farmAnimals = 'cow horse sheep pig chicken';
+const [moo, neigh, baa, oink, cluck] = farmAnimals.split(' ');
+const [bessie, , dolly, babe, little] = farmAnimals.split(' ');
+const [blackAndWhite, , black, pink] = farmAnimals.split(' ');
 
 const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+const [red, orange, yellow, green, blue, indigo, violet] = colors;
+// below i skipped indigo inbetween b and v
+const [r, o, y, g, b, , v] = colors;
+// skipped every part of the colors array until i reached the desired element
+const [, , , , ,indg] = colors;
 
 const muppet = {
   muppetName: 'Miss Piggy',
@@ -9,6 +17,7 @@ const muppet = {
   job: 'Cast member of The Muppet Show',
   partner: 'Kermit'
 };
+const {muppetName, color, song, job, partner} = muppet;
 
 const nestedMuppet = {
   nestedName: 'Kermit',
@@ -24,6 +33,15 @@ const nestedMuppet = {
   nestedJob: 'Host of The Muppet Show',
   nestedPartner: 'Miss Piggy'
 };
+
+//the following line returned 'undefined' because we drilled down too far. 
+// we simply needed to isolate the object that has the key by the same name that we're defining here
+// const {song2} = nestedMuppet.album.theMuppetMovie.song2;
+
+// and now, with this knowledge, i know that we can assign both song2 and song4 since they're both in this nested object
+const {song2, song4} = nestedMuppet.album.theMuppetMovie;
+
+const {nestedJob, nestedPartner} = nestedMuppet;
 
 // Strings
 
